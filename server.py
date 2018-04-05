@@ -10,10 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def mainPage():
-	return render_template('index.html',
-		page_number=0,
-		page_size=page_size,
-		w = w[0:page_size])
+	return render_template('country.html',c=w)
 
 @app.route('/begin/<b>')
 def beginPage(b):
@@ -106,7 +103,6 @@ def searchByAlphabet(ab):
 		if(name[0]==ab):
 			alph.append(i)
 
-			
 	#al = [c for c in w if c['name']==ab]
 
 	return render_template(

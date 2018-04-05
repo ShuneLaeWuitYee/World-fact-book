@@ -8,8 +8,10 @@
 		<div>There are {{length_of_alph}} countries starts with {{ab}}</div>
 		<ul>
 			{% for a in alph %}
-			<li><a href='/countryByName/{{a.name}}'>
-				<img src='/static/flags/{{a.tld}}.gif' class='tiny'>
+			<li>
+			<a href="/static/flags/{{a['tld']}}.gif">
+			<img src='/static/flags/{{a.tld}}.gif' class='tiny'></a>
+			<a href='/countryByName/{{a.name}}'>
 			 {{a.name}}</a></li> 
 			{% endfor %}
 		</ul>

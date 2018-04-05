@@ -31,7 +31,8 @@
 				<div>{{ "{:,.0f}".format(c['gdp']/1000000) }}</div>
 			</div>
 		</div>
-		    <img src="/static/flags/{{c['tld']}}.gif" class='big'>
+		<a href="/static/flags/{{c['tld']}}.gif">
+		    <img src="/static/flags/{{c['tld']}}.gif" class='big'> </a>
 		    <input type='submit' class='button'>
 		</form>
 		<div> <a href='/delete/{{c.name}}'> <button class="button"> Delete </button> </a> </div>
