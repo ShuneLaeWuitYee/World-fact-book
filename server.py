@@ -105,8 +105,7 @@ def searchByAlphabet(ab):
 		if(name[0]==ab):
 			alph.append(i)
 
-	#al = [c for c in w if c['name']==ab]
-
+	
 	return render_template(
 		'search.html',
 		length_of_alph = len(alph),

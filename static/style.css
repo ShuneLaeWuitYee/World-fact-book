@@ -69,21 +69,6 @@ a:hover{
     color: #008080;
 }
 
-.lk_disable{
-    border:solid gray thin;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-    /**/cursor: not-allowed;
-}   
-
-.nav_button{
-    border:solid gray thin;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-    
-    }
 
 .button{
     background-color: Tomato;
