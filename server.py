@@ -90,6 +90,24 @@ def updatecountryByNamePage():
 		'country.html',
 		c = c)
 
+@app.route('/searchbyalphabet/<ab>')
+def searchByAlphabet(ab):
+	ab=ab.upper()
+	alph=[]
+	for i in w:
+		name=i['name']
+		if(name[0]==ab):
+			alph.append(i)
+
+			
+	#al = [c for c in w if c['name']==ab]
+
+	return render_template(
+		'search.html',
+		length_of_alph = len(alph),
+		alph = alph,
+		ab = ab)
+
 
 app.run(host='0.0.0.0', port=5645, debug=True)
 
