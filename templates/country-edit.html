@@ -4,14 +4,16 @@
 	<link rel='stylesheet' href='/static/style.css'>
 </head>
 	<body>
+	<font color="#FF5733">  <h2 id='header'>{{c['name']}}</h2> </font>
+	<table style="width:100%"> 
+	<tr> <td id='left' > </td>
+	<td id='middle'> 
 	   <form action='/updatecountrybyname'>
-		<h1>{{c['name']}}</h1>
-		<div class='properties'>
-			
-				<div><input name='name' value={{c['name']}} type="hidden"></div>
-			
-			<div>
-				<div>Capital</div>
+		
+			<div class='properties'> <div>
+			<input name='name' value={{c['name']}} type="hidden"></div>
+			<div> <div>
+			Capital</div>
 				<div><input name='capital' value={{c['capital']}}></div>
 			</div>
 			<div>
@@ -30,11 +32,18 @@
 				<div>GDP (million $)</div>
 				<div>{{ "{:,.0f}".format(c['gdp']/1000000) }}</div>
 			</div>
-		</div>
-		<a href="/static/flags/{{c['tld']}}.gif">
+		
+		    <a href="/static/flags/{{c['tld']}}.gif">
 		    <img src="/static/flags/{{c['tld']}}.gif" class='big'> </a>
 		    <input type='submit' class='button'>
+		
+		    <div> <a href='/delete/{{c.name}}'> <button class="button"> Delete </button> </a> </div>
+		    </div>
 		</form>
-		<div> <a href='/delete/{{c.name}}'> <button class="button"> Delete </button> </a> </div>
+
+		</td>
+		<td id='right'> </td>
+		</tr>
+		</table>
 	</body>
 </html>

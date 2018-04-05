@@ -4,8 +4,11 @@
 	<link rel='stylesheet' href='/static/style.css'>
 </head>
 	<body>
-		<h1>World Factbook</h1>
-		<div>{{w|length}} countries shown in this page.</div> 
+		<h1 id='header'>World Factbook</h2>
+		<table style="width:100%"> 
+	    <tr> <td id='left' > </td>
+	    <td id='middle'> 
+		<font color="#FF5733"> <h3> {{w|length}} countries shown in this page. </h3> </font></div> 
 		<ul>
 			{% for c in w %}
 			<li>
@@ -15,13 +18,14 @@
 			 {{c.name}}</a></li>
 			{% endfor %}
 		</ul>
-		<div>
+		
 			<a href='/begin/{{page_number-page_size}}'>
 			<button class="button"> Previous Page </button></a> 
-		</div>
-		<div> 
+		
 			<a href='/begin/{{page_number+page_size}}'>
 			<button class="button"> Next Page </button></a>
-		</div>
+		</td>
+		<td id='right'> </td>
+		</tr> </table>
 	</body>
 </html>

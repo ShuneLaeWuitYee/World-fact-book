@@ -4,8 +4,11 @@
 	<link rel='stylesheet' href='/static/style.css'>
 </head>
 	<body>
-		<h1>{{ab}}</h1>
-		<div>There are {{length_of_alph}} countries starts with {{ab}}</div>
+		<h2 id='header'>{{ab}}</h2> 
+		<table style="width:100%"> 
+	    <tr> <td id='left' > </td>
+	    <td id='middle'> 
+		<font color="#FF5733"> <h3> There are {{length_of_alph}} countries starts with {{ab}} </h3> </font></div>
 		<ul>
 			{% for a in alph %}
 			<li>
@@ -14,6 +17,10 @@
 			<a href='/countryByName/{{a.name}}'>
 			 {{a.name}}</a></li> 
 			{% endfor %}
+		
 		</ul>
+		</td>
+		<td id='right'> </td>
+		</tr></table>
 	</body>
 </html>

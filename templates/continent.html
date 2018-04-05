@@ -4,14 +4,23 @@
 	<link rel='stylesheet' href='/static/style.css'>
 </head>
 	<body>
-		<h1>{{a}}</h1>
-		<div>There are {{length_of_cl}} countries in {{a}}</div>
-		<ul>
-			{% for c in cl %}
-			<li><a href='/countryByName/{{c.name}}'>
+	<h1 id='header'>{{a}}</h1>
+	<table style="width:100%"> 
+	<tr> <td id='left'> </td>
+	<td id='middle'> 
+		
+		    <font color="#FF5733"> <h3> There are {{length_of_cl}} countries in {{a}} </h3> </font>
+		    <ul>
+		    {% for c in cl %}
+		    <li><a href='/countryByName/{{c.name}}'>
 				<img src='/static/flags/{{c.tld}}.gif' class='tiny'>
-			 {{c.name}}</a></li>
+			{{c.name}}</a></li>
 			{% endfor %}
-		</ul>
+
+		     </ul>
+	</td>
+	<td id='right'> </td>
+	</tr>
+	</table>
 	</body>
 </html>

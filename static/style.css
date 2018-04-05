@@ -1,5 +1,28 @@
 body{
 	font-family:arial;
+    /*align:center;*/
+    background-image: url('bg img.jpg');
+    background-attachment: fixed;
+   
+}
+#header{
+    text-align: center;
+}
+#left{
+    float: left;
+    width: 35%;
+    
+}
+#middle{
+    float: left;
+    width: 30%;
+    color: #000080;
+    
+}
+#right{
+    float: left;
+    width: 35%;
+    
 }
 img.tiny{
     width: 20px;
@@ -8,9 +31,9 @@ img.tiny{
 img.big {
     width: 200px;
     border: solid thin grey;
-    position: absolute;
+    /*position: absolute;
     right: 1ex;
-    top: 1ex;
+    top: 1ex;*/
 }
 
 .properties div div{
@@ -23,7 +46,16 @@ img.big {
 	font-weight: bold;
 }
 a{
-	text-decoration: none;
+	text-decoration: none; 
+}
+a:link{
+    color:#000080;
+}
+a:visited{
+    color: #008080;
+}
+a:hover{
+    color: #008080;
 }
 
 .lk_disable{
