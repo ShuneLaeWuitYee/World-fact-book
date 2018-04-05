@@ -5,18 +5,18 @@
 </head>
 	<body>
 		<h1>World Factbook</h1>
-		<div>There are {{w|length}} countries in in the world.</div>
+		<div>{{w|length}} countries shown in this page.</div> 
 		<ul>
 			{% for c in w %}
-			<li><a href='/countryByName/{{c.name}}'>
-				<img src='/static/flags/{{c["tld"]}}.gif' class='tiny'>
+			<li><a href='/countryByName/{{c.name}}'> 
+				<img src='/static/flags/{{c["tld"]}}.gif' class='tiny'>  
 			 {{c.name}}</a></li>
 			{% endfor %}
 		</ul>
 		<div class='nav_button'>
-			<a href='/begin/{{page_number-page_size}}'>Previous Page</a>
+			<a href='/begin/{{page_number-page_size}}' class='disable'>Previous Page</a> 
 		</div>
-		<div class='nav_button'>
+		<div class='nav_button'> 
 			<a href='/begin/{{page_number+page_size}}'>Next Page</a>
 		</div>
 	</body>
