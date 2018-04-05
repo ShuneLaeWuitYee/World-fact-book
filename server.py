@@ -18,8 +18,15 @@ def mainPage():
 @app.route('/begin/<b>')
 def beginPage(b):
 	bn = int(b)
-	return render_template('index.html', 
-		w = w[bn:bn+page_size],
+	if(bn<=0):
+		hh='index-1.html'
+	elif(bn>=len(w)-1):
+		hh='index+195.html'
+	else:
+		hh='index.html'
+	
+	return render_template(hh, 
+		w=w[bn:bn+page_size],
 		page_number = bn,
 		page_size = page_size
 		)

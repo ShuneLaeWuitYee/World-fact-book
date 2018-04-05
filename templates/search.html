@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+	<link rel='stylesheet' href='/static/style.css'>
+</head>
+	<body>
+		<h1>{{ab}}</h1>
+		<div>There are {{length_of_alph}} countries starts with {{ab}}</div>
+		<ul>
+			{% for a in alph %}
+			<li><a href='/countryByName/{{a.name}}'>
+				<img src='/static/flags/{{a.tld}}.gif' class='tiny'>
+			 {{a.name}}</a></li> 
+			{% endfor %}
+		</ul>
+	</body>
+</html>

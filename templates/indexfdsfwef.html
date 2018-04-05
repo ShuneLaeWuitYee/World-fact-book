@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<link rel='stylesheet' href='/static/style.css'>
+</head>
+	<body>
+		<h1>World Factbook</h1>
+		<div>{{w|length}} countries shown in this page.</div> 
+		<ul>
+			{% for c in w %}
+			<li><a href='/countryByName/{{c.name}}'> 
+				<img src='/static/flags/{{c["tld"]}}.gif' class='tiny'>  
+			 {{c.name}} </a></li>
+			{% endfor %}
+		</ul>
+
+		<div>
+	    <script type="text/javascript">
+	    if (page_number<0)
+	    {
+
+	    	var a='Previous Page';
+	    	document.write(a);
+	    	a.href='/begin/{{page_number-page_size}}';
+	    	a.class='disable';
+	    }
+	    else{
+	    	var a='Previous Page';
+	    	document.write(a);
+	    	a.href='/begin/{{page_number-page_size}}';
+	    	a.class='nav_button';
+		}	    
+		</script>
+		
+		</div>
+		<div> 
+		<script type="text/javascript">
+		if (page_number>194)
+		{
+			var a='Next Page';
+			document.write(a);
+			a.link('/begin/{{page_number+page_size}}');
+			a.class='disable';
+		}
+		else{
+			var a='Next Page';
+			document.write(a);
+			a.link('/begin/{{page_number+page_size}}');
+			a.class='nav_button';
+			}
+		</script>
+			
+		</div>
+		
+	</body>
+</html>
