@@ -3,25 +3,36 @@ body{
     /*align:center;*/
     background-image: url('bg img.jpg');
     background-attachment: fixed;
-   
+    width: 100%;
+    height: 100%;
 }
 #header{
     text-align: center;
 }
 #left{
     float: left;
-    width: 35%;
+    width: 30%;
     
 }
 #middle{
     float: left;
-    width: 30%;
+    width: 40%;
     color: #000080;
     
 }
+#middle1{
+    float: left;
+    width: 27%;
+    color: #000080;
+}
+#middle2{
+    float: left;
+    width: 13%;
+
+}
 #right{
     float: left;
-    width: 35%;
+    width: 30%;
     
 }
 img.tiny{

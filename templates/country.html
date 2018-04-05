@@ -7,10 +7,10 @@
 	<font color="#FF5733">  <h2 id='header'>{{c['name']}}</h2> </font>
 	<table style="width:100%"> 
 	<tr> <td id='left' > </td>
-	<td id='middle'> 
-		
-		
-		<div class='properties'>
+	<td id='middle1'> 
+	    	
+	    <div class='properties'>
+	    
 			<div>
 				<div>Capital</div>
 				<div>{{c['capital']}}</div>
@@ -32,18 +32,29 @@
 				<div>GDP (Million)</div>
 				<div>{{ "${:,.0f}".format(c['gdp']/1000000) }}</div>
 			</div>
-
+        </div>
+    </td>
+    <td id='middle2'>  
 		
 		<a href="/static/flags/{{c['tld']}}.gif">
-		<img src="/static/flags/{{c['tld']}}.gif" class='big'> </a>
-		<div class='edit-button'>
-		<a href='/editcountryByName/{{c.name}}' class='button'> <button class="button"> Edit </button></a>
-		 <a href='/delete/{{c.name}}' class='button'> <button class="button"> Delete </button> </a>
-		</div>
-		</div>
-		</td>
-		<td id='right'> </td>
-		</tr></table>
+		<img src="/static/flags/{{c['tld']}}.gif" class='big'> </a> 
+	</td> 
+    
+    <td id='right'> </td>  </tr>
+
+<tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr>
+	<tr> <td id='left'> </td> <td id='middle1' align="center"> 		    
+		    <div class='edit-button'>
+		    <a href='/editcountryByName/{{c.name}}' class='button'> <button class="button"> Edit </button></a>
+		    </div> 
+		                
+		    </td>
+		    <td id='middle2' align="left">
+	        <a href='/delete/{{c.name}}' class='button'> <button class="button"> Delete </button> </a> 
+		    </td>
+		    <td id='right'> </td>
+		</tr>
+	</table>
 		
 	</body>
 </html>

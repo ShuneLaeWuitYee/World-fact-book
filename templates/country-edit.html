@@ -7,7 +7,7 @@
 	<font color="#FF5733">  <h2 id='header'>{{c['name']}}</h2> </font>
 	<table style="width:100%"> 
 	<tr> <td id='left' > </td>
-	<td id='middle'> 
+	<td id='middle1'> 
 	   <form action='/updatecountrybyname'>
 		
 			<div class='properties'> <div>
@@ -33,17 +33,27 @@
 				<div>{{ "{:,.0f}".format(c['gdp']/1000000) }}</div>
 			</div>
 		
-		    <a href="/static/flags/{{c['tld']}}.gif">
-		    <img src="/static/flags/{{c['tld']}}.gif" class='big'> </a>
-		    <input type='submit' class='button'>
 		
-		    <div> <a href='/delete/{{c.name}}'> <button class="button"> Delete </button> </a> </div>
-		    </div>
 		</form>
 
+		</td> <td id='middle2'>
+			<a href="/static/flags/{{c['tld']}}.gif">
+		    <img src="/static/flags/{{c['tld']}}.gif" class='big'> </a>			
 		</td>
 		<td id='right'> </td>
 		</tr>
+
+		<tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr>
+	<tr> <td id='left'> </td> <td id='middle1' align="center"> 
+	
+		    <input type='submit' class='button'>
+		    </td>
+		    <td id='middle2' align="left">
+		    <div> <a href='/delete/{{c.name}}'> <button class="button"> Delete </button> </a> 
+		    </div></td>
+		    <td id='right'> </td>
+		</tr>
+
 		</table>
 	</body>
 </html>
