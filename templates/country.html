@@ -17,7 +17,7 @@
 			</div>
 			<div>
 				<div>Continent</div>
-				<div><a href='../continent/{{c.continent}}'>{{c['continent']}}</a></div>
+				<div><a href='../continent/{{c.continent}},{{c.name}}'>{{c['continent']}}</a></div>
 			</div>
 			<div>
 				<div>Area</div>
@@ -42,14 +42,15 @@
     
     <td id='right'> </td>  </tr>
 
-<tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr>
-	<tr> <td id='left'> </td> <td id='middle1' align="center"> 		    
-		    <div class='edit-button'>
+ </table> <br> 
+<table style="width:100%">
+	<tr> <td id='left'> </td> <td width="13%" align="center"> <a href='/'> <button class="button"> Back </button> </a> </td>
+	 <td width="13%" align="center">  
+	        
 		    <a href='/editcountryByName/{{c.name}}' class='button'> <button class="button"> Edit </button></a>
-		    </div> 
-		                
+		    		            
 		    </td>
-		    <td id='middle2' align="left">
+		    <td width="13%" align="center"> 
 	        <a href='/delete/{{c.name}}' class='button'> <button class="button"> Delete </button> </a> 
 		    </td>
 		    <td id='right'> </td>

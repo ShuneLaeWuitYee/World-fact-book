@@ -30,14 +30,22 @@ def beginPage(b):
 		page_size = page_size
 		)
 
-@app.route('/continent/<a>')
-def continentPage(a):
+@app.route('/continent/<a>,<n>')
+def continentPage(a,n):
+	
+	a=a.replace("'","")
+	a=a.replace("(","")
+	#a=a.replace(' ','')
+	n=n.replace("'","")
+	n=n.replace(")","")
+	#n=n.replace(' ','')
 	cl = [c for c in w if c['continent']==a]
 	return render_template(
 		'continent.html',
 		length_of_cl = len(cl),
 		cl = cl,
-		a = a
+		a = a,
+		n = n
 		)
 
 @app.route('/country/<i>')
@@ -79,6 +87,7 @@ def editcountryByNamePage(n):
 	for x in w:
 		if x['name'] == n:
 			c = x
+	#c=c.replace(' ','_')
 	return render_template(
 		'country-edit.html',
 		c = c)
@@ -86,6 +95,7 @@ def editcountryByNamePage(n):
 @app.route('/updatecountrybyname')
 def updatecountryByNamePage():
 	n=request.args.get('name')
+	n=n.replace('_',' ')
 	c = None
 	for x in w:
 		if x['name'] == n:
