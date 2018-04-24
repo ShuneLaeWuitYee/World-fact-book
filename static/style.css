@@ -69,28 +69,28 @@ a:hover{
     color: #008080;
 }
 
-ul#alink a:link{
-    
+ul#alink a:link{ 
+    background: white;
     color: black;
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    list-style-type: none;
-    border-color: black;
-    
+    list-style-type: none;   
 }
-ul#alink a:hover{
-    color: #008080;
-}
+
 ul#alink a:visited{
     color: black;
+}
+
+ul#alink a:hover{
+    color: #008080;
 }
 .button{
     background-color: Tomato;
     border: none;
     padding: 7px 12px;
-    text-align: center;
+    text-align: center; 
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
