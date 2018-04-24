@@ -24,8 +24,17 @@
 		</tr>
         <tr> 
         <td id='left'> </td>
-	    <td id='middle' align="center"> <a href='/'> <button class="button"> Home </button> </a> </td>
+	    <td id='middle' align="center"> <a href='/'> <button class="button"> Home </button> </a> 
+        
+	    </td>
 	    <td id='right'> </td>
+        </tr>
+        <tr> 
+        <td id='left'> </td>
+	    <td id='middle' align="center"> {% for a in alist %}
+    	<a href='/searchbyalphabet/{{a}}'>{{a}}</a>
+    	{% endfor %} </td>
+    	<td id='right'> </td>
         </tr>
 		</table>
 	</body>
