@@ -1,30 +1,8 @@
-<!doctype html>
-<html>
-<head>
-	<link rel='stylesheet' href='/static/style.css'>
-</head>
-	<body>
-	<h1 id='header'>World Factbook</h1>
-	<table style="width:100%"> 
-	<tr> <td id='left'> </td>
-	<td id='middle'> 
-		
-		<font color="#FF5733"> <h3> {{w|length}} countries shown in this page. </h3> </font>
-		<ul>
-			{% for c in w %}
-			<li>
-			<a href="/static/flags/{{c['tld']}}.gif">
-			<img src='/static/flags/{{c["tld"]}}.gif' class='tiny'> </a>
-			<a href='/countryByName/{{c.name}}'> 		 
-			 {{c.name}}</a></li>
-			{% endfor %}
-		</ul>
-		
-	</td>
-	<td id='right'> </td>
-	</tr>
-    <tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr> <tr> </tr>
-	<tr> <td id='left'> </td> <td id='middle1' align="center"> <a href='/begin/{{page_number-page_size}}'>
+{% extends "index.html" %}
+	{% block content %}
+
+	<tr> <td id='left'> </td> <td id='middle1' align="center">
+	 <a href='/begin/{{page_number-page_size}}'>
 			<button class="button">Previous Page </button>
 			</a> </td>
 			<td id='middle2' align="left"> <a href='/begin/{{page_number+page_size}}'>
@@ -32,5 +10,5 @@
 	
 		</tr>
 	</table>
-	</body>
-</html>
+	{% endblock %}
+	

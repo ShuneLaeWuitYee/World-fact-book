@@ -22,7 +22,7 @@
 		</td>
 		<td id='right'> </td>
 		</tr> 
-        
+        {% block content %}
 		<tr> <td id='left'> </td> <td id='middle1' align="center"> <a href='/begin/{{page_number-page_size}}'>
 			<button class="button"> Previous Page </button></a>
 			</td>
@@ -45,5 +45,6 @@
     	</th>    
 		</tr>
 		</table>
+		{% endblock %}
 	</body>
 </html>
