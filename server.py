@@ -3,6 +3,7 @@ import json
 
 
 w = json.load(open("worldl.json"))
+alist=sorted(list(set([c['name'][0] for c in w])))
 for c in w:
 	c['tld'] = c['tld'][1:]
 page_size = 20
@@ -12,12 +13,12 @@ app = Flask(__name__)
 def mainPage():
 	
     return render_template('index.html',
-    	w=w[0:page_size],page_number=0,page_size=page_size)
+    	w=w[0:page_size],page_number=0,page_size=page_size,alist=alist)
 
 @app.route('/begin/<b>')
 def beginPage(b):
 	bn = int(b)
-	if(bn<=0):
+	if(bn<0):
 		hh='index-1.html'
 	elif(bn>=len(w)-1):
 		hh='index+195.html'
@@ -27,7 +28,7 @@ def beginPage(b):
 	return render_template(hh, 
 		w=w[bn:bn+page_size],
 		page_number = bn,
-		page_size = page_size
+		page_size = page_size,alist=alist
 		)
 
 @app.route('/continent/<a>,<n>')
@@ -45,14 +46,16 @@ def continentPage(a,n):
 		length_of_cl = len(cl),
 		cl = cl,
 		a = a,
-		n = n
+		n = n,
+		alist=alist
 		)
 
 @app.route('/country/<i>')
 def countryPage(i):
 	return render_template(
 		'country.html',
-		c = w[int(i)])
+		c = w[int(i)],
+		alist=alist)
 
 @app.route('/countryByName/<n>')
 def countryByNamePage(n):
@@ -62,7 +65,8 @@ def countryByNamePage(n):
 			c = x
 	return render_template(
 		'country.html',
-		c = c)
+		c = c,
+		alist=alist)
 
 @app.route('/delete/<n>')
 
@@ -71,14 +75,12 @@ def deleteCountryPage(n):
 	for c in w:
 		if c['name'] == n:
 			break
-
 		i+=1
-
 	del w[i]
 	return render_template('index.html',
 		page_number=0,
 		page_size=page_size,
-		w = w[0:page_size])
+		w = w[0:page_size],alist=alist)
 #all deleted country will be back on the list after restarting the server
 
 @app.route('/editcountryByName/<n>')
@@ -104,7 +106,7 @@ def updatecountryByNamePage():
 	c['continent']=request.args.get('continent') 
 	return render_template(
 		'country.html',
-		c = c)
+		c = c, alist=alist)
 
 @app.route('/searchbyalphabet/<ab>')
 def searchByAlphabet(ab):
@@ -120,7 +122,8 @@ def searchByAlphabet(ab):
 		'search.html',
 		length_of_alph = len(alph),
 		alph = alph,
-		ab = ab)
+		ab = ab,
+		alist=alist)
 
 
 app.run(host='0.0.0.0', port=5645, debug=True)
