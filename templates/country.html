@@ -6,6 +6,7 @@
 	<body>
 	<font color="#FF5733">  <h2 id='header'>{{c['name']}}</h2> </font>
 	<table style="width:100%"> 
+
 	<tr> <td id='left' > </td>
 	<td id='middle1'> 
 	    	
@@ -34,19 +35,18 @@
 			</div>
         </div>
     </td>
-    <td id='middle2'>  
-		
+    <td id='middle2'>	
 		<a href="/static/flags/{{c['tld']}}.gif">
 		<img src="/static/flags/{{c['tld']}}.gif" class='big'> </a> 
-	</td> 
-    
+	</td>     
     <td id='right'> </td>  </tr>
 
  </table> <br> 
+
 <table style="width:100%">
+
 	<tr> <td id='left'> </td> <td width="13%" align="center"> <a href='/'> <button class="button"> Back </button> </a> </td>
-	 <td width="13%" align="center">  
-	        
+	 <td width="13%" align="center"> 	        
 		    <a href='/editcountryByName/{{c.name}}' class='button'> <button class="button"> Edit </button></a>
 		    		            
 		    </td>
@@ -54,16 +54,19 @@
 	        <a href='/delete/{{c.name}}' class='button'> <button class="button"> Delete </button> </a> 
 		    </td>
 		    <td id='right'> </td>
-		</tr>
+	</tr>
+
     <tr></tr><tr></tr><tr></tr><tr></tr>
+
 	<tr> 
-    <td id='left'></td>
-    <th colspan="3"> 
-    {% for a in alist %}
-    	<a href='/searchbyalphabet/{{a}}'>{{a}}</a>
-    	{% endfor %}
-    </th>
     
+    <th colspan="5" align="center"> 
+    <ul id='alink'>
+    {% for a in alist %}
+    	<a href='/searchbyalphabet/{{a}}'><li>{{a}}</li></a>
+    	{% endfor %}
+    </ul>
+    </th>    
 	</tr>
 
 	</table>

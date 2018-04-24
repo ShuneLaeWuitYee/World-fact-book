@@ -6,9 +6,10 @@
 	<body>
 		<h2 id='header'>{{ab}}</h2> 	
 		<table style="width:100%"> 
+
 	    <tr> <td id='left' > </td>
 	    <td id='middle'> 
-		<font color="#FF5733"> <h3> {{length_of_alph}} countries start with {{ab}} </h3> </font></div>
+		<font color="#FF5733"> <h3> {{length_of_alph}} countries start with {{ab}} </h3> </font>
 		<ul>
 			{% for a in alph %}
 			<li>
@@ -16,26 +17,28 @@
 			<img src='/static/flags/{{a.tld}}.gif' class='tiny'></a>
 			<a href='/countryByName/{{a.name}}'>
 			 {{a.name}}</a></li> 
-			{% endfor %}
-		
+			{% endfor %}		
 		</ul>
 		</td>
 		<td id='right'> </td>
 		</tr>
+
         <tr> 
         <td id='left'> </td>
-	    <td id='middle' align="center"> <a href='/'> <button class="button"> Home </button> </a> 
-        
+	    <td id='middle' align="center"> <a href='/'> <button class="button"> Home </button> </a>         
 	    </td>
 	    <td id='right'> </td>
         </tr>
+
         <tr> 
-        <td id='left'> </td>
-	    <td id='middle' align="center"> {% for a in alist %}
-    	<a href='/searchbyalphabet/{{a}}'>{{a}}</a>
-    	{% endfor %} </td>
-    	<td id='right'> </td>
+        <td colspan="3" align="center">
+        <ul id='alink'>
+	    {% for a in alist %}
+    	<a href='/searchbyalphabet/{{a}}'><li>{{a}}</li></a>
+    	{% endfor %} </ul> 
+    	</td>
         </tr>
+
 		</table>
 	</body>
 </html>

@@ -5,7 +5,9 @@
 </head>
 	<body>
 		<h1 id='header'>World Factbook</h1>
+
 		<table style="width:100%"> 
+
 	    <tr> <td id='left' > </td>
 	    <td id='middle'> 
 		<font color="#FF5733"> <h3> {{w|length}} countries shown in this page. </h3> </font>
@@ -22,6 +24,7 @@
 		</td>
 		<td id='right'> </td>
 		</tr> 
+
         {% block content %}
 		<tr> <td id='left'> </td> <td id='middle1' align="center"> <a href='/begin/{{page_number-page_size}}'>
 			<button class="button"> Previous Page </button></a>
@@ -31,20 +34,24 @@
 			<button class="button"> Next Page </button></a>
 			</td>
 			<td id='right'> </td>
-		</tr></table>
+		</tr>
+		</table>
+
 		<br>
 		<table style="width:100%">
 		
 		<tr> 
-    	<td id='left'></td>
-    	<th colspan="3"> 
-    	{% for a in alist %}
-    	<a href='/searchbyalphabet/{{a}}'>{{a}}</a>
-    	{% endfor %}
     	
+    	<th colspan="4"> 
+    	<ul id='alink'> 
+    	{% for a in alist %} 
+    	<a href='/searchbyalphabet/{{a}}'><li>{{a}}</li></a>
+    	{% endfor %}   
+    	</ul>
     	</th>    
 		</tr>
 		</table>
 		{% endblock %}
+
 	</body>
 </html>

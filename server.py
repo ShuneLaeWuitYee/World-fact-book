@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 import json
 
-
 w = json.load(open("worldl.json"))
 alist=sorted(list(set([c['name'][0] for c in w])))
 for c in w:
@@ -10,8 +9,7 @@ page_size = 20
 app = Flask(__name__)
 
 @app.route('/')
-def mainPage():
-	
+def mainPage():	
     return render_template('index.html',
     	w=w[0:page_size],page_number=0,page_size=page_size,alist=alist)
 
@@ -23,8 +21,7 @@ def beginPage(b):
 	elif(bn>=len(w)-1):
 		hh='index+195.html'
 	else:
-		hh='index.html'
-	
+		hh='index.html'	
 	return render_template(hh, 
 		w=w[bn:bn+page_size],
 		page_number = bn,
@@ -32,8 +29,7 @@ def beginPage(b):
 		)
 
 @app.route('/continent/<a>,<n>')
-def continentPage(a,n):
-	
+def continentPage(a,n):	
 	a=a.replace("'","")
 	a=a.replace("(","")
 	#a=a.replace(' ','')
@@ -69,7 +65,6 @@ def countryByNamePage(n):
 		alist=alist)
 
 @app.route('/delete/<n>')
-
 def deleteCountryPage(n):
 	i=0
 	for c in w:
@@ -115,9 +110,7 @@ def searchByAlphabet(ab):
 	for i in w:
 		name=i['name']
 		if(name[0]==ab):
-			alph.append(i)
-
-	
+			alph.append(i)	
 	return render_template(
 		'search.html',
 		length_of_alph = len(alph),
@@ -125,9 +118,4 @@ def searchByAlphabet(ab):
 		ab = ab,
 		alist=alist)
 
-
 app.run(host='0.0.0.0', port=5645, debug=True)
-
-
-
-

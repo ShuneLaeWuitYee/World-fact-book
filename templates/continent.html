@@ -5,10 +5,11 @@
 </head>
 	<body>
 	<h1 id='header'>{{a}}</h1>
+
 	<table style="width:100%"> 
+
 	<tr> <td id='left'> </td>
-	<td id='middle'> 
-		
+	<td id='middle'>		
 		    <font color="#FF5733"> <h3> There are {{length_of_cl}} countries in {{a}} </h3> </font>
 		    <ul>
 		    {% for c in cl %}
@@ -16,26 +17,26 @@
 				<img src='/static/flags/{{c.tld}}.gif' class='tiny'> 
 			{{c.name}}</a></li>
 			{% endfor %}
-
-		     </ul>
-		     
+		     </ul>		     
 	</td>
 	<td id='right'> </td>
 	</tr>
+
     <tr> 
     <td id='left'> </td>
 	<td id='middle' align="center"> <a href='/countryByName/{{n}}'> <button class="button"> Back </button> </a> </td>
 	<td id='right'> </td>
     </tr>
-    <tr>
-    	<td id='left'></td>
-    	<td id='middle'>
-    		{% for a in alist %}
-        <a href='/searchbyalphabet/{{a}}'>{{a}}</a>
-        {% endfor %}
-    	</td>
-    	<td id='right'></td>
+
+    <tr>    	
+    	<td colspan="3" align="center">
+        <ul id='alink'> 
+    	{% for a in alist %}            
+        <a href='/searchbyalphabet/{{a}}'> <li> {{a}} </li> </a> 
+        {% endfor %} </ul>
+    	</td>    	
     </tr>
+
 	</table>
 	</body>
 </html>
