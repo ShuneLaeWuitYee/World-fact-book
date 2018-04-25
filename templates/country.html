@@ -47,19 +47,15 @@
 
 	<tr> <td id='left'> </td> <td width="13%" align="center"> <a href='/'> <button class="button"> Back </button> </a> </td>
 	 <td width="13%" align="center"> 	        
-		    <a href='/editcountryByName/{{c.name}}' class='button'> <button class="button"> Edit </button></a>
-		    		            
+		    <a href='/editcountryByName/{{c.name}}' class='button'> <button class="button"> Edit </button></a>		    		            
 		    </td>
 		    <td width="13%" align="center"> 
 	        <a href='/delete/{{c.name}}' class='button'> <button class="button"> Delete </button> </a> 
 		    </td>
 		    <td id='right'> </td>
 	</tr>
-
     <tr></tr><tr></tr><tr></tr><tr></tr>
-
-	<tr> 
-    
+	<tr>    
     <th colspan="5" align="center"> 
     <ul id='alink'>
     {% for a in alist %}
@@ -69,7 +65,6 @@
     </th>    
 	</tr>
 
-	</table>
-		
+	</table>		
 	</body>
 </html>
