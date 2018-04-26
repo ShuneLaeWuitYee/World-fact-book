@@ -19,7 +19,7 @@ def beginPage(b):
 	if(bn<0):
 		hh='index-1.html'
 	elif(bn>=len(w)-1):
-		hh='index+195.html'
+		hh='index+195.html' 
 	else:
 		hh='index.html'	
 	return render_template(hh, 
@@ -99,6 +99,9 @@ def updatecountryByNamePage():
 			c = x
 	c['capital']=request.args.get('capital')
 	c['continent']=request.args.get('continent') 
+	c['area']=int(request.args.get('area'))
+	c['population']=int(request.args.get('population'))
+	c['gdp']=int(request.args.get('gdp'))
 	return render_template(
 		'country.html',
 		c = c, alist=alist)
