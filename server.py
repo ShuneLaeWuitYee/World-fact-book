@@ -83,8 +83,9 @@ def editcountryByNamePage(n):
 	c = None
 	for x in w:
 		if x['name'] == n:
+			x['name']=x['name'].replace(' ','_')
 			c = x
-	#c=c.replace(' ','_')
+	
 	return render_template(
 		'country-edit.html',
 		c = c)
@@ -92,16 +93,17 @@ def editcountryByNamePage(n):
 @app.route('/updatecountrybyname')
 def updatecountryByNamePage():
 	n=request.args.get('name')
-	n=n.replace('_',' ')
 	c = None
 	for x in w:
 		if x['name'] == n:
 			c = x
+	
 	c['capital']=request.args.get('capital')
 	c['continent']=request.args.get('continent') 
 	c['area']=int(request.args.get('area'))
 	c['population']=int(request.args.get('population'))
 	c['gdp']=float(request.args.get('gdp'))
+
 	return render_template(
 		'country.html',
 		c = c, alist=alist)
